@@ -1,0 +1,114 @@
+<div class="container">
+    <form class="form-horizontal" enctype="multipart/form-data" role="form" (ngSubmit)="saveData()">
+        <h2>Registration Form</h2>
+
+
+        <div *ngIf="alertMsg" class="alert alert-danger alert-dismissable fade in">
+            <a (click)="hideAlertMsg()" class="close" data-dismiss="alert" aria-label="close">&times;</a> Please Provide
+            all data.
+        </div>
+
+        <div class="form-group">
+            <label for="firstName" class="col-sm-3 control-label">Full Name</label>
+            <div class="col-sm-9">
+                <input type="text" name="firstName" [(ngModel)]="user.firstName" placeholder="Full Name" class="form-control" autofocus>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-3 control-label">Email</label>
+            <div class="col-sm-9">
+                <input type="email" name="email" [(ngModel)]="user.email" placeholder="Email" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-3 control-label">Password</label>
+            <div class="col-sm-9">
+                <input type="password" name="password" [(ngModel)]="user.password" placeholder="Password" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="birthDate" class="col-sm-3 control-label">Date of Birth</label>
+            <div class="col-sm-9">
+                <input type="date" name="birthDate" [(ngModel)]="user.birthDate" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="country" class="col-sm-3 control-label">Country</label>
+            <div class="col-sm-9">
+                <select name="country" class="form-control" [(ngModel)]="user.country">
+               <option>India</option>
+               <option>USA</option>
+               <option>UK</option>
+               <option>Canada</option>
+               <option>Ecuador</option>
+               <option>Gabon</option>
+               <option>Haiti</option>
+            </select>
+            </div>
+        </div>
+        <!-- /.form-group -->
+        <div class="form-group">
+            <label class="control-label col-sm-3">Gender</label>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                  <input type="radio" name="femaleRadio" [(ngModel)]="user.gender" value="Female" >Female
+                  </label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                  <input type="radio" name="maleRadio" [(ngModel)]="user.gender" value="Male">Male
+                  </label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                  <input type="radio" name="uncknownRadio" [(ngModel)]="user.gender" value="Unknown">Unknown
+                  </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.form-group -->
+        <div class="form-group">
+            <label class="control-label col-sm-3">Hobby</label>
+            <div class="col-sm-9">
+                <div class="checkbox">
+                    <label>
+               <input type="checkbox" id="Cricket" name="Cricket" [(ngModel)]="user.hobbyCricket" value="Cricket">Cricket</label>
+                </div>
+                <div class="checkbox">
+                    <label>
+               <input type="checkbox" id="Football" name="Football" [(ngModel)]="user.hobbyFootball" value="Football">Football</label>
+                </div>
+
+            </div>
+        </div>
+        <!-- /.form-group -->
+        <div class="form-group">
+            <label for="firstName" class="col-sm-3 control-label">Photo</label>
+            <div class="col-sm-9">
+                <input type="file" name="image" multiple (change)="fileChangeEvent($event)" placeholder="Upload file..." />
+            </div>
+        </div>
+        <!-- /.form-group -->
+        <!-- /.form-group -->
+        <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3">
+                <div class="checkbox">
+                    <label>
+               <input type="checkbox" name="terms" [(ngModel)]="user.terms">I accept <a href="#">terms</a>
+               </label>
+                </div>
+            </div>
+        </div>
+        <!-- /.form-group -->
+        <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3">
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </div>
+        </div>
+    </form>
+    <!-- /form -->
+</div>
+<!-- ./container -->
