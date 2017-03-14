@@ -14,11 +14,14 @@ import { EditComponent } from './product/edit.component';
 import { UtilService } from './services/util.service';
 import { UserService } from './services/user.service';
 
+//Directives
+import { HeaderComponent } from './directives/header.component';
+
 //DataTableModule
 import {DataTableModule} from "angular2-datatable";
 import { DataFilterPipe }   from './filters/data-filter.pipe';
 @NgModule({
-  declarations: [AppComponent, AddComponent, ListComponent, EditComponent, DataFilterPipe],
+  declarations: [AppComponent, AddComponent, ListComponent, EditComponent, DataFilterPipe, HeaderComponent],
   imports: [
     BrowserModule,
     FormsModule,
