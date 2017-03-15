@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
             this.activeAddCls = true;
             this.activeListCls = false;
         }
-        if (activatedRoute.snapshot.url[0].path == 'list') {
+        if (activatedRoute.snapshot.url[0].path == 'list' || activatedRoute.snapshot.url[0].path == 'edit') {
             this.activeListCls = true;
             this.activeAddCls = false;
         }
